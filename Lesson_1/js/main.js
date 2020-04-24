@@ -1,15 +1,6 @@
-/*
-Add a paragpragh of
-text
-*/
+var name = "Mike";
+var val = 6;
 
-var hello = "Hello World";
+var myList = [ 1, 2, 3, 4, "Hello", ["yo", "hi,hi"]];
 
-//Sets value
-var value = 3;
-
-var open = true;
-console.log(open);
-
-// Adds value to itself
-console.log(value == 3);
+console.log( myList[5][1] )
