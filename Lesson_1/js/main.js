@@ -1,6 +1,8 @@
 var name = "Mike";
 var val = 6;
 
-var myList = [ 1, 2, 3, 4, "Hello", ["yo", "hi,hi"]];
+var myList = [ 1, 2, 3, 4, 5];
 
-console.log( myList[5][1] )
+for(var i = 0; i < myList.length; i++){
+	console.log(myList[i]);
+}
