@@ -1,15 +1,15 @@
-var name = "Mike";
-var val = 6;
+alert("You have 5 guesses. Guess 1 - 10");
 
-var myList = [ 1, 2, 3, 4, 5, 6, 7];
-
-for(var i = 0; i < myList[i]; i++){
-	console.log(myList[i]);
-}
+var answer = 3;
+var guess = prompt("Whats your guess?");
 
 
-var i = 0;
-while( myList[i] ){
-	console.log(myList[i]);
-	i++;
+for(i = 0; i < 5; i++){
+	if( answer == guess ){
+		alert("You guessed correctly");
+		break;
+	}
+	else{
+		guess = prompt("Please Try Again");
+	}
 }
