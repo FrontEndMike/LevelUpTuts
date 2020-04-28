@@ -1,13 +1,9 @@
 var name = "Mike";
 
-function firstFunc(){
-	console.log("yo yo");
-	//Private variable
-	var name = "Bill";
-	console.log("Name in function " + name);
+//Define nameFunc
+function nameFunc(greeting, name){
+	return greeting + " " + name;
 }
 
-//Runs firstFunc function
-firstFunc();
-
-console.log(name);
+//Passes string arguments through function
+console.log(nameFunc("Hello", "Mike!"));
