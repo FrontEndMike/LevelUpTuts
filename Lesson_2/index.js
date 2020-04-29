@@ -7,32 +7,26 @@ document.getElementById("app").innerHTML = `
 </div>
 `;
 
-// Function declaration
-// Hoisted
-// function sayHi(){
-// 	return console.log('hi');
-// }
 
-// Function expression
-// Anonymous functions
-// Not hoisted
-// Passed around or used
-// const sayHi = function(){
-// 	return console.log("hi");
-// }
+//create function of makePerson that passes in 3 variables 
+// and returns a object that is a name, age, and job
+const makePerson = (name, age, job) => {
+	return{
+		name,
+		age,
+		job
+	};
+};
 
-// const sayHi = function sayHi(){
-// 	return console.log("hi");
-// }
+// object that contains values to pass 
+// through the function makePerson
+const dev = makePerson("Mike", 32, "Web Dev");
+
+// pulls out the property name 
+// then "the rest" from dev object
+// and assigns it to a new variable
+const { name, ...rest } = dev;
 
 
-// Arrow functions
-// const sayHi = () => {
-// 	return console.log("hi");
-// }
+console.log(name, rest);
 
-// const sayHi = () => return console.log("hi");
-
-const sayHi = () => (console.log("hi"));
-
-sayHi();
