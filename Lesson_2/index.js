@@ -10,23 +10,24 @@ document.getElementById("app").innerHTML = `
 
 //create function of makePerson that passes in 3 variables 
 // and returns a object that is a name, age, and job
-const makePerson = (name, age, job) => {
+const makePerson = ({ firstName, age, job, lastName }) => {
 	return{
-		name,
+		name: firstName + ' ' + lastName,
 		age,
-		job
+		job,
 	};
 };
 
-// object that contains values to pass 
-// through the function makePerson
-const dev = makePerson("Mike", 32, "Web Dev");
-
-// pulls out the property name 
-// then "the rest" from dev object
-// and assigns it to a new variable
-const { name, ...rest } = dev;
+const dev = makePerson({
+	firstName: "Mike",
+	lastName: "Jackson",
+	job: "Web Dev",
+	age: 32
+});
 
 
-console.log(name, rest);
+
+
+
+console.log(dev);
 
