@@ -7,14 +7,18 @@ document.getElementById("app").innerHTML = `
 </div>
 `;
 
+//Consistency is King
+// Use var names that make sense to what the data is
+// variable that wont change
+const BASE_SALARY = 16000;
+const SALARY_MULTIPLIER = 4;
 
-//create function of makePerson that passes in 3 variables 
-// and returns a object that is a name, age, and job
 const makePerson = ({ firstName, age, job, lastName }) => {
 	return{
 		name: firstName + ' ' + lastName,
 		age,
 		job,
+		salary: BASE_SALARY * SALARY_MULTIPLIER
 	};
 };
 
@@ -26,8 +30,28 @@ const dev = makePerson({
 });
 
 
+//DO NOT DO
+// const hireDev = ({ devInfo }) => {
+// 	const hiredDevInfo = {
+// 		hired: true,
+// 		...devInfo
+// 	}
+// 	return hiredDevInfo;
+// }
+
+
+// Correct
+const hireDev = ({ dev }) => {
+	const hiredDev = {
+		hired: true,
+		...dev
+	}
+	return hiredDev;
+}
 
 
 
-console.log(dev);
+
+
+console.log(hireDev({ dev }));
 
