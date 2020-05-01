@@ -7,77 +7,30 @@ document.getElementById("app").innerHTML = `
 </div>
 `;
 
+const SHIPPING_COST = 10;
 
-// Immutable vs. Mutable
-// can't be changed vs can be changed
-// isnt changed vs. changed
+const cart = [10, 5, 15];
 
-// Pure functions
-// Always return the same thing with the same input
-const addTwo = (x) => x + 2;
-console.log(addTwo(2));
+const fakeAPICharge = total => true;
+const fakeSendReceipt = total => true;
 
-// Not pure
-let multi = 4; // External state
-const addThree = (x) => x + multi;
-console.log(addThree(2));
+const getSubTotal = cart => cart.reduce((tempTotal, item) => tempTotal + item);
+const getTotal = subTotal => subTotal + SHIPPING_COST;
+const sendReceipt =({email, total}) => 
+		fakeSendReceipt({
+			email,
+			total
+		});
 
-multi = 5;
-console.log(addThree(2));
-
-multi = 6;
-console.log(addThree(2));
-
-// Not pure
-let mult = 4; // External state
-const addFour = (x) => {
-	mult += 2;
-	return x + mult;
-};
-console.log(addFour(2));
-console.log(addFour(2));
-console.log(addFour(2));
-
-
-let name = "Mike";
-name = name + " Jackson";
-console.log( name );
-
-
-const BASE_SALARY = 16000;
-const SALARY_MULTIPLIER = 4;
-
-const makePerson = ({ firstName, age, job, lastName }) => {
-	return{
-		name: firstName + ' ' + lastName,
-		age,
-		job,
-		salary: BASE_SALARY * SALARY_MULTIPLIER
-	};
-};
-
-const dev = makePerson({
-	firstName: "Mike",
-	lastName: "Jackson",
-	job: "Web Dev",
-	age: 32
-});
-
-
-
-
-// Correct
-const hireDev = ({ dev }) => {
-	const hiredDev = {
-		hired: true,
-		...dev
+		
+const checkout = cart => {
+	const subTotal = getSubTotal(cart);
+	const total = getTotal(subTotal);
+	const orderSuccess = fakeAPICharge(total);
+	if ( orderSuccess ) {
+		sendReceipt ({email: "fakeemail@gmail.com", total });
 	}
-	return hiredDev;
+	return orderSuccess;
 }
 
-
-
-
-
-console.log(hireDev({ dev }));
-
+checkout(cart);
