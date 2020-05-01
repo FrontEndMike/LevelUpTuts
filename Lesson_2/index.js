@@ -7,30 +7,14 @@ document.getElementById("app").innerHTML = `
 </div>
 `;
 
-const SHIPPING_COST = 10;
+const heading = document.createElement('div')
+heading.innerHTML = `
+	<section style="padding: 1rem; width: 20rem; display: block; margin: 0 auto; background-color: lightblue;">
+		<span>hi</span> 
+		<p>
+			This text has been entered through the dom.
+		</p>
+	</section>
+	`;
+document.body.appendChild(heading);
 
-const cart = [10, 5, 15];
-
-const fakeAPICharge = total => true;
-const fakeSendReceipt = total => true;
-
-const getSubTotal = cart => cart.reduce((tempTotal, item) => tempTotal + item);
-const getTotal = subTotal => subTotal + SHIPPING_COST;
-const sendReceipt =({email, total}) => 
-		fakeSendReceipt({
-			email,
-			total
-		});
-
-		
-const checkout = cart => {
-	const subTotal = getSubTotal(cart);
-	const total = getTotal(subTotal);
-	const orderSuccess = fakeAPICharge(total);
-	if ( orderSuccess ) {
-		sendReceipt ({email: "fakeemail@gmail.com", total });
-	}
-	return orderSuccess;
-}
-
-checkout(cart);
