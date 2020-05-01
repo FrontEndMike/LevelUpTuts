@@ -7,9 +7,43 @@ document.getElementById("app").innerHTML = `
 </div>
 `;
 
-//Consistency is King
-// Use var names that make sense to what the data is
-// variable that wont change
+
+// Immutable vs. Mutable
+// can't be changed vs can be changed
+// isnt changed vs. changed
+
+// Pure functions
+// Always return the same thing with the same input
+const addTwo = (x) => x + 2;
+console.log(addTwo(2));
+
+// Not pure
+let multi = 4; // External state
+const addThree = (x) => x + multi;
+console.log(addThree(2));
+
+multi = 5;
+console.log(addThree(2));
+
+multi = 6;
+console.log(addThree(2));
+
+// Not pure
+let mult = 4; // External state
+const addFour = (x) => {
+	mult += 2;
+	return x + mult;
+};
+console.log(addFour(2));
+console.log(addFour(2));
+console.log(addFour(2));
+
+
+let name = "Mike";
+name = name + " Jackson";
+console.log( name );
+
+
 const BASE_SALARY = 16000;
 const SALARY_MULTIPLIER = 4;
 
@@ -30,14 +64,6 @@ const dev = makePerson({
 });
 
 
-//DO NOT DO
-// const hireDev = ({ devInfo }) => {
-// 	const hiredDevInfo = {
-// 		hired: true,
-// 		...devInfo
-// 	}
-// 	return hiredDevInfo;
-// }
 
 
 // Correct
