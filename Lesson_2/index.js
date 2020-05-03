@@ -23,7 +23,16 @@ const addRandomtoBackground = () => {
 addRandomtoBackground();
 
 const newColors = document.getElementById("new-colors");
-// On click attach 1 event
-// newColors.onclick = () => addRandomtoBackground();
-
 newColors.addEventListener("click", addRandomtoBackground)
+
+// Set Interval vs Set Timeout
+
+// const log = () => console.log("is in timeout");
+// setTimeout(log, 1000);
+// setTimeout(addRandomtoBackground, 5000);
+// Set Timeout happens once
+
+const interval = setInterval(addRandomtoBackground, 2000);
+//Set Interval, happens over and over
+
+newColors.addEventListener("click", () => clearInterval(interval));
