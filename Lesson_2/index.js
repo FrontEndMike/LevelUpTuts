@@ -20,4 +20,10 @@ const addRandomtoBackground = () => {
 	return applyColorToBody(color);
 }
 
-console.log(addRandomtoBackground());
+addRandomtoBackground();
+
+const newColors = document.getElementById("new-colors");
+// On click attach 1 event
+// newColors.onclick = () => addRandomtoBackground();
+
+newColors.addEventListener("click", addRandomtoBackground)
