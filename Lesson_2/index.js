@@ -1,15 +1,23 @@
-const logo = document.querySelector("#logo");
+// Generate random color
+// //  RBG 0-255
+// Apply to dom
+// update color on event
 
-logo.innerText = "yo!";
+const generateColorValue = () => Math.floor(Math.random() * 256);
+const createColor = () => {
+	const red = generateColorValue();
+	const green = generateColorValue();
+	const blue = generateColorValue();
+	return `rgb(${red}, ${green}, ${blue})`
+}
 
-const heading = document.createElement('div')
-heading.innerHTML = `
-	<section style="padding: 1rem; width: 20rem; display: block; margin: 0 auto; background-color: lightblue;">
-		<span>hi</span> 
-		<p>
-			This text has been entered through the dom.
-		</p>
-	</section>
-	`;
-document.body.appendChild(heading);
+const applyColorToBody = color => {
+	document.body.style.backgroundColor = color;
+}
 
+const addRandomtoBackground = () => {
+	const color = createColor();
+	return applyColorToBody(color);
+}
+
+console.log(addRandomtoBackground());
