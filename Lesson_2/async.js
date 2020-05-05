@@ -1,3 +1,5 @@
+const button = document.querySelector('button');
+
 function makeRequest(location) {
 	return new Promise(( resolve, reject) => {
 		console.log(`Making Request to ${location}`)
@@ -27,8 +29,9 @@ function processRequest(response) {
 // })
 
 async function doWork() {
+	const inputVal = document.getElementById("userInput").value;
 	try {
-		const response = await makeRequest('Facebook')
+		const response = await makeRequest(inputVal)
 		console.log('Response Received')
 		const processedResponse = await processRequest(response)
 		console.log(processedResponse)
@@ -36,4 +39,5 @@ async function doWork() {
 		console.log(err)
 	}
 }
-doWork()
+
+button.addEventListener("click", doWork);
