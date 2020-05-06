@@ -1,22 +1,39 @@
-// Made up code
+const simpleShoppingCart = [10, 20, 25, 5, 10];
 
-const chargeCard = () => new Promise(( resolve, reject ) => {
-	// card is valid
-	// reject("Fail!!!");
-	if (true) {
-		return resolve(true);
+const shoppingCart = [
+	{
+		sku: "1234",
+		price: 10,
+		type: "t-shirt"
+	},
+	{
+		sku: "123334",
+		price: 16,
+		type: "tutorial"
+	},
+	{
+		sku: "12111134",
+		price: 30,
+		type: "tutorial"
 	}
-	return resolve(false);
+];
+
+// .map
+//  iterates over array, perform a function on
+// each item. Returns new array
+
+// const discountCart = simpleShoppingCart.map((value) => {
+// 	return value * .75;
+// });
+
+// const discountCart = simpleShoppingCart.map((value) => value * .75);
+
+const discountCart = shoppingCart.map((value) => {
+	return{
+		...value,
+		salePrice: value.price * .75
+	}
 });
 
-const chargeCC = async (ccNumber) => {
-	try{
-		const res = await chargeCard(ccNumber);
-		console.log(res);
-		return res;
-	} catch(error) {
-		console.log(error);
-	}
-}
-
-console.log(chargeCC('1234123412341234'));
+console.log(shoppingCart);
+console.log(discountCart);
