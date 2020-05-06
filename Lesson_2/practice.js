@@ -1,7 +1,8 @@
+// get button and make button a variable
 const button = document.querySelector('button');
  
-
 function output(){
+	// Get value from input
 	const inputVal = document.getElementById("userInput").value;
 	if ( inputVal === 'Google') {
 		console.log('Google says hi')
@@ -10,4 +11,5 @@ function output(){
 	}
 }
 
+// when the button query is clicked run output function
 button.addEventListener("click", output);
