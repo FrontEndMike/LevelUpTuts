@@ -1,3 +1,4 @@
+// Creates Button value for the "Button" on the HTML
 const button = document.querySelector('button');
 
 function makeRequest(location) {
@@ -31,6 +32,7 @@ function processRequest(response) {
 async function doWork() {
 	const inputVal = document.getElementById("userInput").value;
 	try {
+		// Passes input value through makeRequest function
 		const response = await makeRequest(inputVal)
 		console.log('Response Received')
 		const processedResponse = await processRequest(response)
