@@ -28,11 +28,19 @@ const shoppingCart = [
 // returns a new array
 // returns same or less amount o items
 
+// .reduce
+// iterates over array, uses values, to output one value 
+// outputs a single value
+
 // const discountCart = simpleShoppingCart.map((value) => {
 // 	return value * .75;
 // });
 
 // const discountCart = simpleShoppingCart.map((value) => value * .75);
+
+const total = simpleShoppingCart.reduce((total, currentPrice) => {
+	return total + currentPrice;
+})
 
 const discountCart = shoppingCart.map((value) => {
 	return{
@@ -41,19 +49,11 @@ const discountCart = shoppingCart.map((value) => {
 	}
 });
 
-// Filters the shoppingCart array by type(tutorial)
-// then filters all tutorials that are less than 20 in price
-// then adds an item to the array of "extra"
-const filteredCart = shoppingCart.filter(({type}) => {
-	return type === 'tutorial';
-}).filter(product => {
-	return product.price > 20;
-}).map(product => ({...product, extra: product.price * 10}));
 
 // const filteredCart = shoppingCart.filter(({type}) =>  type === 'tutorial');
 
-console.log(shoppingCart);
-console.log(filteredCart);
+console.log(simpleShoppingCart);
+console.log(total);
 
 
 
