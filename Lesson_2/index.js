@@ -21,6 +21,12 @@ const shoppingCart = [
 // .map
 //  iterates over array, perform a function on
 // each item. Returns new array
+// Returns same items array
+
+// . filter
+// iterates over array, determines what is filtered,
+// returns a new array
+// returns same or less amount o items
 
 // const discountCart = simpleShoppingCart.map((value) => {
 // 	return value * .75;
@@ -35,5 +41,23 @@ const discountCart = shoppingCart.map((value) => {
 	}
 });
 
+// Filters the shoppingCart array by type(tutorial)
+// then filters all tutorials that are less than 20 in price
+// then adds an item to the array of "extra"
+const filteredCart = shoppingCart.filter(({type}) => {
+	return type === 'tutorial';
+}).filter(product => {
+	return product.price > 20;
+}).map(product => ({...product, extra: product.price * 10}));
+
+// const filteredCart = shoppingCart.filter(({type}) =>  type === 'tutorial');
+
 console.log(shoppingCart);
-console.log(discountCart);
+console.log(filteredCart);
+
+
+
+
+
+
+
