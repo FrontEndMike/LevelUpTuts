@@ -50,11 +50,12 @@ body{
 
 /* ------------ content ------------ */
 .content{
-    width:380px;
+    width: 100%;
     height: 350px;
     max-height:350px;
     background-color: #FFF;
     overflow: auto;
+    position: relative;
 }
 .content::-webkit-scrollbar { 
     display: none; 
@@ -64,17 +65,15 @@ body{
     margin:0;
 }
 .item{
-    width:380px;
-    height: 45px;
-    min-height: 45px;
-    position: relative;
+    width: 100%;
+    height: auto;
     border-bottom: 1px solid rgba(0,0,0,0.1);
     list-style: none;
-    padding: 0;
+    padding: 0.5rem;
     margin: 0;
 }
 .item i.co{
-    position: absolute;
+    display: inline-block;
     font-size: 25px;
     padding-left:5px;
     left:15px;
@@ -87,7 +86,7 @@ body{
     color:#6eb200;
 }
 .item p.text{
-    position: absolute;
+    display: inline-block;
     padding:0;
     margin:0;
     font-size: 20px;
