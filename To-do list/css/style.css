@@ -8,13 +8,15 @@ body{
 
 /* ------------ container ------------ */
 .container{
-    width:380px;
+    width:500px;
     margin:0 auto;
 }
 
+
+
 /* ------------ header ------------ */
 .header{
-    width: 380px;
+    width: 500px;
     height:200px;
     background-image: url('../img/bg2.jpg');
     background-size: 100% 200%;
@@ -50,8 +52,7 @@ body{
 /* ------------ content ------------ */
 .content{
     width: 100%;
-    height: 350px;
-    max-height:350px;
+    height: auto;
     background-color: #FFF;
     overflow: auto;
     position: relative;
@@ -72,10 +73,11 @@ body{
 }
 .item i.co{
     display: inline-block;
-    font-size: 25px;
-    padding-left:5px;
-    left:15px;
-    top:10px;
+    font-size: 3rem;
+    padding-left: 5px;
+    left: 15px;
+    top: 10px;
+    margin-right: 1rem;
 }
 .item i.co:hover{
     cursor: pointer;
@@ -87,7 +89,7 @@ body{
     display: inline-block;
     padding:0;
     margin:0;
-    font-size: 20px;
+    font-size: 3rem;
     left:50px;
     top:5px;
     background-color: #FFF;
@@ -107,30 +109,29 @@ body{
 /* ------------ add item ------------ */
 .add-to-do{
     position: relative;
-    width: 360px;
-    height:40px;
+    height:60px;
     background-color: #FFF;
     padding: 10px;
     border-top: 1px solid rgba(0,0,0,0.1);
 }
 .add-to-do i{
     position: absolute;
-    font-size: 40px;
+    font-size: 4rem;
     color: #4162f6;
 }
 i.fa-trash-o {
     float: right;
-    font-size: 1.5rem;
+    font-size: 3.5rem;
 }
 .add-to-do input{
     position: absolute;
-    left: 50px;
-    height: 35px;
+    left: 70px;
+    height: 50px;
     width: 310px;
     background-color: transparent;
     border: none;
     font-size: 20px;
-    padding-left:10px;
+    padding-left: 10px;
 }
 .add-to-do input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #4162f6;

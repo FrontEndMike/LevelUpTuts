@@ -3,6 +3,8 @@ const clear = document.querySelector(".clear");
 const dateElement = document.getElementById("date");
 const list = document.getElementById("list");
 const input = document.getElementById("input");
+const addToListSign = document.getElementById("add-item-sign");
+
 
 // Classes names
 const CHECK = "fa-check-circle";
@@ -41,7 +43,7 @@ const today = new Date();
 dateElement.innerHTML = today.toLocaleDateString("en-US", options);
 
 // add to do function
-const addToDo = (toDo, id, done, trash) => {
+function addToDo(toDo, id, done, trash){
 	if(trash){ return; }
 
 	// IF done check else uncheck
@@ -75,15 +77,36 @@ document.addEventListener("keyup", function(even){
 				done : false,
 				trash : false
 			});
-			
-			id++;
 			// add item to local storage (this code must be added where the LIST array is updated)
 			localStorage.setItem("TODO", JSON.stringify(LIST));
+			id++;
 		}
 		// empty's add todo field
 		input.value = "";
 	}
 })
+
+
+// add an item to the list user pressing the blue plus sign
+addToListSign.addEventListener("click", function(event){
+	const toDo = input.value;
+	// if the input field isnt empty
+	if(toDo){
+		addToDo(toDo, id, false, false);
+
+		LIST.push({
+			name : toDo,
+			id : id,
+			done : false,
+			trash : false
+		});
+		// add item to local storage (this code must be added where the LIST array is updated)
+		localStorage.setItem("TODO", JSON.stringify(LIST));
+		id++;
+	}
+	// empty's add todo field
+	input.value = "";
+});
 
 
 // complete to do 
