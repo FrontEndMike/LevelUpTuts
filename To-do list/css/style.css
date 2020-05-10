@@ -87,13 +87,14 @@ body{
 }
 .item p.text{
     display: inline-block;
-    padding:0;
-    margin:0;
-    font-size: 3rem;
-    left:50px;
-    top:5px;
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+    left: 50px;
+    top: 0px;
     background-color: #FFF;
-    max-width:285px;
+    max-width: 285px;
+    vertical-align: text-bottom;
 }
 .lineThrough{
     text-decoration: line-through;
