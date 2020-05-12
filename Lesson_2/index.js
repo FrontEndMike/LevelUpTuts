@@ -25,15 +25,45 @@ const shoppingCart = [
 // Use when you build an array out of old data and need to add
 // new data to it or modify data in array
 
+// .filter
+// iterates over array, determines what is filtered,
+// returns new array
+// returns same amount of items or fewer
+
+// .reduce
+// iterate over array and uses values to output one value
+// outputs single value
+
 // const discountCart = simpleShoppingCart.map( value =>  value * .75);
 
-const discountCart = shoppingCart.map((total) => {
-  return{
-    ...total,
-    salePrice: total.price * .75
-  }
-});
+// const discountCart = shoppingCart.map((total) => {
+//   return{
+//     ...total,
+//     salePrice: total.price * .75
+//   }
+// });
 
+const filteredCart = shoppingCart.filter(({type}) => {
+	return type === 'tutorial';
+}).filter(product => {
+	return product.price > 20;
+}).map(discount => ({ // takes in filtered array value (labeled "discount")
+	...discount, // returns array
+	discount: discount.price * .90}) // return array plus "discount price"
+);
+
+
+const filteredCart = shoppingCart.filter(({type}) =>  type === 'tutorial');
 
 console.log(shoppingCart);
-console.log(discountCart);
+console.log(filteredCart);
+
+
+
+
+
+
+
+
+
+
