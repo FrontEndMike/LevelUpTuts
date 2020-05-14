@@ -43,17 +43,24 @@ const shoppingCart = [
 //   }
 // });
 
+// First create an array of the parameter (price)
+// item is the new array made from the old array 
+// and has the same parameters
+// item.price is the parameter being returned from the new array
+// totalPrice is an array of that parameter
+const totalPrice = shoppingCart.map((item) => {
+    return item.price;
+});
 
-
-const total = shoppingCart.reduce((total, currentPrice) => {
-	return total + (currentPrice[key] || 0), 0;
+// Iterates over the array (total) and outpute a single value
+const total = totalPrice.reduce((total, currentPrice) => {
+	return total + currentPrice;
 });
 
 
 console.log(shoppingCart);
-console.log(total);
-
-
+console.log("Your prices are : " + totalPrice);
+console.log("Your total is : " + "$" + total);
 
 
 
