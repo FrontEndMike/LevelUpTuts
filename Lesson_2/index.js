@@ -48,14 +48,10 @@ const shoppingCart = [
 // and has the same parameters
 // item.price is the parameter being returned from the new array
 // totalPrice is an array of that parameter
-const totalPrice = shoppingCart.map((item) => {
-    return item.price;
-});
+const totalPrice = shoppingCart.map((item) => item.price);
 
 // Iterates over the array (total) and outpute a single value
-const total = totalPrice.reduce((total, currentPrice) => {
-	return total + currentPrice;
-});
+const total = totalPrice.reduce((total, currentPrice) => total + currentPrice);
 
 
 console.log(shoppingCart);
