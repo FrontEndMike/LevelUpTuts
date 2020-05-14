@@ -43,20 +43,15 @@ const shoppingCart = [
 //   }
 // });
 
-const filteredCart = shoppingCart.filter(({type}) => {
-	return type === 'tutorial';
-}).filter(product => {
-	return product.price > 20;
-}).map(discount => ({ // takes in filtered array value (labeled "discount")
-	...discount, // returns array
-	discount: discount.price * .90}) // return array plus "discount price"
-);
 
 
-const filteredCart = shoppingCart.filter(({type}) =>  type === 'tutorial');
+const total = shoppingCart.reduce((total, currentPrice) => {
+	return total + (currentPrice[key] || 0), 0;
+});
+
 
 console.log(shoppingCart);
-console.log(filteredCart);
+console.log(total);
 
 
 
