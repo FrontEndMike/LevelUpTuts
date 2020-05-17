@@ -1,28 +1,42 @@
-console.log(this);
-
-const test = {
-	name: "test",
-	testFunc: function() {
-		console.log(this.name);
-		this.name = "Scott"
-		console.log(this);
-	},
-	testFuncTwo: () => {
-		console.log(this, 'arrow func');
+class Team {
+	constructor(name) {
+		this.name = name;
 	}
-};
 
-function team(name) {
-	this.name = name;
-	console.log(this);
+	celebrate(){
+		console.log("Dance");
+	}
 }
 
-const button = document.getElementById("new-colors");
-button.addEventListener("click", function() {
-	console.log(this);
-});
+class BasketballTeam extends Team {
+	constructor(name) {
+		super(name);
+		this.type = "Basketball";
+	}
 
-test.testFunc();
-test.testFuncTwo();
-// team();
-const wings = new team('Red Wings');
+	scoreGoal(){
+		console.log("He shoots, he scores");
+	}
+}
+
+class FootBallTeam extends Team {
+	constructor(name) {
+		super(name);
+		this.type = "Basketball";
+	}
+
+	touchdown(){
+		console.log("Go for two!!");
+	}
+}
+
+const wings = new BasketballTeam("Wings");
+const lions = new FootBallTeam("Lions");
+
+wings.scoreGoal();
+lions.touchdown();
+wings.celebrate();
+lions.celebrate();
+// lions.scoreGoal();
+
+console.log(wings, lions);
