@@ -22,8 +22,8 @@ function searchFunc() {
 	// Take in input value from html
 	// Variables had to be declared within function to work
 	const SEARCH_QUERY = document.getElementById("input").value
-    // const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${SEARCH_QUERY}&key=yourAPIKey`;
-    const API_URL = `https://www.googleapis.com/books/v1/volumes?q=javascript`;
+    const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${SEARCH_QUERY}`;
+    // const API_URL = `https://www.googleapis.com/books/v1/volumes?q=javascript`;
 	fetch(API_URL)
 	.then(res => {
 		return res.json();
@@ -37,11 +37,16 @@ function searchFunc() {
         //.slice to limit .map results
 		let book_list = data.items.slice(0, 10); 
 		return book_list.map(function(new_list) {
-			let author_name = new_list.id
-			let book_title = new_list.id;
+			let author_name = new_list.volumeInfo.authors;
+            let book_title = new_list.volumeInfo.title;
+            let book_link = new_list.volumeInfo.canonicalVolumeLink;
+            let book_img = new_list.volumeInfo.imageLinks.thumbnail;
 			li = createNode('li'),
-			li.innerHTML = `<span class="title">Book title :  ${book_title} </span>
-							<span class="aurthor"> Author : ${author_name} </span>`;
+            li.innerHTML = `<a href="${book_link}" target="_blank">
+                            <img src="${book_img}">
+                            <span class="title">${book_title} </span>
+                            <span class="aurthor"> Author : ${author_name} </span>
+                            </a>`;
             append(ul, li);
             console.log(book_list);
         }) 
