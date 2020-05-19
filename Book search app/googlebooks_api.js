@@ -72,7 +72,6 @@ function searchFunc() {
 							`;
 			counter++;
 			append(ul, li);
-			console.log(book_list);
         }) 
 	})
 	.catch(error => {
