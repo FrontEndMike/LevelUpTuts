@@ -52,11 +52,11 @@ function searchFunc() {
                             	<h3 class="title">${book_title} </h3>
 								<p class="aurthor"> Author : ${author_name} </p>
 								<a href="${book_link}" target="_blank" class="btn btn-primary">
-									Purchase
+								<i class="fas fa-dollar-sign"></i> Purchase
 								</a>
 								<p class="description-btn">
 								<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample${counter}" aria-expanded="false" aria-controls="multiCollapseExample${counter}">
-									Description
+								<i class="fas fa-align-left"></i> Description
 								</button>
 								</p>
 								<div class="row">
