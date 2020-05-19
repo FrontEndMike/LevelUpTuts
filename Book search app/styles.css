@@ -17,7 +17,7 @@ body.search-contain{
     display: block;
     margin: 0 auto;
     border-radius: 25px;
-    min-height: 50vh;
+    min-height: 30vh;
 }
 #input{
     border-radius: 25px 0px 0px 25px;
