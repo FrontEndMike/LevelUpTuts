@@ -4,7 +4,6 @@
 
 
 const SEARCH = document.getElementById("search");
-const NEWSEARCH = document.getElementById("new-search");
 
 function createNode(element) {
 	return document.createElement(element);
@@ -34,7 +33,8 @@ function searchFunc() {
 		// So in order for your code to work change data.map() 
 		// to data.products.map() 
         // since items is an array which you can iterate upon.
-        //.slice to limit .map results
+		//.slice to limit .map results
+		document.getElementById("app").innerHTML = "";
 		let book_list = data.items.slice(0, 10); 
 		return book_list.map(function(new_list) {
 			let author_name = new_list.volumeInfo.authors;
@@ -48,15 +48,12 @@ function searchFunc() {
                             <span class="aurthor"> Author : ${author_name} </span>
                             </a>`;
             append(ul, li);
-            console.log(book_list);
         }) 
 	})
 	.catch(error => {
 		console.log(error);
 });
 }
-function newSearch() {
-	document.getElementById("app").innerHTML = "";
-}
-NEWSEARCH.addEventListener("click", newSearch);
+
+
 SEARCH.addEventListener("click", searchFunc);
