@@ -19,6 +19,9 @@ body.search-contain{
     border-radius: 25px;
     min-height: 50vh;
 }
+#input{
+    border-radius: 25px 0px 0px 25px;
+}
 .book-image {
     display: inline-block;
     max-width: 10rem;
