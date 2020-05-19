@@ -1,0 +1,40 @@
+body.search-contain{
+    max-width: 45rem;
+    margin: 0 auto;
+    display: block;
+    padding: 2rem;
+}
+#app{
+    display: block;
+    margin: 0 auto;
+    border-radius: 25px;
+    min-height: 50vh;
+}
+.book-image {
+    display: inline-block;
+    max-width: 10rem;
+    padding: 1rem;
+}
+.book-image img{
+    width: 100%;
+}
+.book-info {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 25rem;
+    width: 100%;
+    padding: 1rem;
+}
+.description-btn{
+    display: inline-block;
+}
+.card.card-body {
+    border: 0px;
+    padding: 0rem;
+}
+footer{
+    margin-top: 4rem;
+}
+footer p{
+    text-align: center;
+}
